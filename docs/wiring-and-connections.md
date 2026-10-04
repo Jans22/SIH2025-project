@@ -30,11 +30,4 @@ The carriage movement is controlled using a 12 V DC motor and an L298N motor dri
 
 The Arduino, L298N and external power supply share a common ground.
 
-## 2. Pump Driver Circuit
 
-The 12 V diaphragm pump is controlled using a 2N2222A transistor.
-
-
-Pump (+)
-   |
- +12 V
