@@ -1,0 +1,47 @@
+# System Architecture
+
+## 1. System Overview
+
+The Smart Pesticide Sprayer is a prototype designed for automated crop monitoring and targeted spraying.
+
+The system combines:
+
+- Raspberry Pi-based image acquisition
+- Camera-based crop monitoring
+- Motorized cable-mounted movement
+- Arduino-based motor control
+- Arduino-controlled spraying
+- Servo-based positioning
+- Pump-based liquid delivery
+
+## 2. High-Level Architecture
+
+                    ┌─────────────────────┐
+                    │   Raspberry Pi      │
+                    │                     │
+                    │ Image Processing    │
+                    │ Camera Control      │
+                    │ System Control      │
+                    └──────────┬──────────┘
+                               │
+                               │ Control
+                               ▼
+                    ┌─────────────────────┐
+                    │      Arduino        │
+                    │                     │
+                    │ Motor Control       │
+                    │ Pump Control        │
+                    └───────┬─────┬───────┘
+                            │     │
+                            │     │
+                            ▼     ▼
+                     ┌──────────┐ ┌──────────┐
+                     │  L298N   │ │ Pump     │
+                     │  Driver  │ │ Driver   │
+                     └────┬─────┘ └────┬─────┘
+                          │             │
+                          ▼             ▼
+                     DC Motor        12 V Pump
+                          │             │
+                          ▼             ▼
+                    Cable Movement   Spray Nozzle
